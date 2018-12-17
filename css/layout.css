@@ -1,0 +1,169 @@
+html,body{
+    width:100%;
+    height:100%;
+    overflow: hidden;
+    padding:5px;
+}
+
+h3,h6{
+    margin:10px;
+}
+
+.breadcrumb{
+    font-size:10pt;
+}
+
+.action-heading{
+    background: #fafafa;
+    border-bottom: 1px solid #e0e0e0;
+    margin-bottom:5px;
+    margin-top:5px;
+}
+
+.page-x-action{
+    float:left;
+}
+
+.page-x-query{
+    float:right;
+}
+.page-x-query-more{
+    float:left;
+    width:100%;
+}
+.admin-form input.gui-input{
+    padding-left:5px;
+}
+#topbar{
+    min-height:41px;
+}
+
+.page-x-content{
+    height:calc(100% - 150px);
+}
+.page-x-content-body{
+    height:calc(100% - 30px);
+}
+.layui-layer-content{
+    padding:0 !important;
+    padding-top:10px !important;
+}
+
+.full-screen{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+}
+
+
+a:hover{
+    text-decoration: none;
+}
+
+.btn-remove{
+    margin-left:10px;
+    padding-top:5px;
+    padding-bottom:5px;
+}
+.btn-edit{
+    padding-top:5px;
+    padding-bottom:5px;
+}
+.bootstrap-table .table:not(.table-condensed), .bootstrap-table .table:not(.table-condensed)>tbody>tr>td, .bootstrap-table .table:not(.table-condensed)>tbody>tr>th, .bootstrap-table .table:not(.table-condensed)>tfoot>tr>td, .bootstrap-table .table:not(.table-condensed)>tfoot>tr>th, .bootstrap-table .table:not(.table-condensed)>thead>tr>td {
+    padding: 3px;
+}
+.row-btn-container{
+    width:150px;
+}
+
+label.button{
+    padding-left:0 !important;
+    padding-right:0 !important;
+}
+
+.form-actions{
+    text-align:center;
+    padding-top:5px;
+    border-top:1px solid #DDD;
+}
+
+.form-content{
+    height:calc(100% - 40px);
+    overflow-y:auto;
+    overflow-x:hidden;
+}
+.layui-layer-content{
+    overflow:hidden !important;
+}
+.admin-form .panel-body {
+    padding: 10px;
+}
+.admin-form .panel {
+    margin-bottom: 0px;
+    background-color: #ffffff;
+    border-bottom:0; 
+}
+.btn-split{
+    margin-left:40px !important;
+}
+
+.tree-title{
+    width:calc(100% - 40px);
+}
+
+.cus-tree-node-action{
+    float:right;
+    display:none;
+}
+.tree-btn,.tree-btn:hover{
+    margin-left:5px;
+    margin-right:5px;
+    color:inherit;
+}
+
+.tree-btn-add{
+
+}
+
+.tree-btn-remove{
+    color:red;
+}
+
+.tree-btn-edit{
+    
+}
+.icon-blank{
+    background:inherit;
+}
+
+#btnAdd{
+    background-color: #fff;
+    border:1px solid #d0d2d6;
+    color :#000;
+    border-radius: 8px;
+}
+
+.panel-tabs > li.active > a, .panel-tabs > li.active > a:hover, .panel-tabs > li.active > a:focus{
+    background-color: #0a67db96;
+    color:#fff;
+
+}
+
+.panel-tabs.panel-tabs-border > li.active > a{
+    2px solid  #0a088d;
+    
+}
+
+.btn-primary{
+    border-radius: 8px;
+    background-color: #3b81dfd1;
+}
+
+.btn-danger{
+    border-radius: 8px;
+
+}
+
+#query{
+    border-radius: 8px;
+}

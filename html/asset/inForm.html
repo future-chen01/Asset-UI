@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <title>资产管理系统-资产入库</title>
+    <meta name="keywords" content="资产 管理 " />
+    <meta name="description" content="用于管理公司或企业内部的资产">
+
+    <meta name="author" content="Eric Xu">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Font CSS (Via CDN) -->
+    <!--<link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700'>-->
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" type="text/css" href="../../js/vendor/plugins/magnific/magnific-popup.css">
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" type="text/css" href="../../js/assets/skin/default_skin/css/theme.css">
+
+    <!-- Admin Forms CSS -->
+    <link rel="stylesheet" type="text/css" href="../../js/assets/admin-tools/admin-forms/css/admin-forms.css">
+
+    <link rel="stylesheet" type="text/css" href="../../css/layout.css" />
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../../img/icon.ico">
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+<![endif]-->
+
+</head>
+
+
+<body class="" style="overflow:hidden;">
+    <div class="admin-form theme-primary full-screen">
+        <div class="panel heading-border panel-primary full-screen">
+            <div class="panel-body bg-light full-screen">
+                <form class="full-screen">
+                    <div class="full-screen form-content">
+                        <div class="section-divider mv10" id="spy4">
+                            <span>使用信息</span>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="smart-widget sm-left sml-80">
+                                    <label class="field">
+                                        <input type="text" name="assetDepartmentid" id="assetDepartmentid" data-control="orgTree" class="gui-input" placeholder="输入使用部门">
+                                    </label>
+                                    <label for="assetDepartmentid" class="button btn-primary" >使用部门</label>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="smart-widget sm-left sml-80">
+                                    <label class="field">
+                                        <input type="text" name="assetUserid" id="assetUserid"  data-control="userList" class="gui-input" placeholder="输入使用人">
+                                    </label>
+                                    <label for="assetUserid" class="button btn-primary" >使用人</label>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="smart-widget sm-left sml-80">
+                                    <label class="field">
+                                        <input type="text" name="assetStorageplace" id="assetStorageplace" data-control="positionList" class="gui-input" placeholder="输入使用地">
+                                    </label>
+                                    <label for="assetStorageplace" class="button btn-primary" >资产存放地</label>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="smart-widget sm-left sml-80">
+                                    <label class="field">
+                                        <input type="text" name="assetEnabledate" id="assetEnabledate" data-control="cusDate" class="gui-input" placeholder="输入领用时间">
+                                    </label>
+                                    <label for="assetEnabledate" class="button btn-primary">领用时间</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="section-divider mv10" id="spy4"></div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="smart-widget sm-left sml-80">
+                                    <label class="field">
+                                        <input type="text" name="assetNumber" id="assetNumber" class="gui-input" placeholder="输入资产编码">
+                                    </label>
+                                    <label for="assetNumber" class="button btn-primary">资产编码</label>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="smart-widget sm-left sml-80">
+                                    <label class="field">
+                                        <input type="text" name="assetName" id="assetName" class="gui-input" placeholder="输入资产名称">
+                                    </label>
+                                    <label for="assetName" class="button btn-primary">资产名称</label>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="smart-widget sm-left sml-80">
+                                    <label class="field">
+                                        <input type="text" name="assetClassifyid" id="assetClassifyid" data-control="categoryTree" class="gui-input" placeholder="输入产品类别">
+                                    </label>
+                                    <label for="assetClassifyid" class="button btn-primary">资产分类id</label>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="smart-widget sm-left sml-80">
+                                    <label class="field">
+                                        <input type="text" name="assetStoragedate" id="assetStoragedate" data-control="cusDate" class="gui-input" placeholder="输入入库时间">
+                                    </label>
+                                    <label for="assetStoragedate" class="button btn-primary">入库时间</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="section-divider mv10" id="spy4"></div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="smart-widget sm-left sml-80">
+                                    <label class="field">
+                                        <input type="text" name="assetUsedirectionid" id="assetUsedirectionid" data-control="orgTree" class="gui-input" placeholder="输入资产使用方向">
+                                    </label>
+                                    <label for="assetUsedirectionid" class="button btn-primary" >资产使用方向</label>
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-md-3">
+                                <div class="smart-widget sm-left sml-80">
+                                    <label class="field">
+                                        <input type="text" name="useOrg" id="useOrg" data-control="orgTree" class="gui-input" placeholder="输入计量单位">
+                                    </label>
+                                    <label for="useOrg" class="button btn-primary" >计量单位</label>
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-md-3">
+                                <div class="smart-widget sm-left sml-80">
+                                    <label class="field">
+                                        <input type="text" name="assetSourceid" id="assetSourceid" data-control="orgTree" class="gui-input" placeholder="输入资产来源">
+                                    </label>
+                                    <label for="assetSourceid" class="button btn-primary" >资产来源</label>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="smart-widget sm-left sml-80">
+                                    <label class="field">
+                                        <input type="text" name="assetChannel" id="assetChannel" data-control="orgTree" class="gui-input" placeholder="输入渠道">
+                                    </label>
+                                    <label for="assetChannel" class="button btn-primary" >渠道</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="section-divider mv10" id="spy4"></div>
+                        <div class="row">
+                        <div class="col-md-3">
+                                <div class="smart-widget sm-left sml-80">
+                                    <label class="field">
+                                        <input type="text" name="assetPurchaseid" id="assetPurchaseid" data-control="orgTree" class="gui-input" placeholder="输入采购单号">
+                                    </label>
+                                    <label for="assetPurchaseid" class="button btn-primary" >采购单号</label>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="smart-widget sm-left sml-80">
+                                    <label class="field">
+                                        <input type="text" name="assetContractid" id="assetContractid" data-control="orgTree" class="gui-input" placeholder="输入合同单号">
+                                    </label>
+                                    <label for="assetContractid" class="button btn-primary" >合同单号</label>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-3">
+                                <div class="smart-widget sm-left sml-80">
+                                    <label class="field">
+                                        <input type="text" name="assetSNNumber" id="assetSNNumber" data-control="orgTree" class="gui-input" placeholder="输入SN号">
+                                    </label>
+                                    <label for="assetSNNumber" class="button btn-primary" >SN号</label>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="smart-widget sm-left sml-80">
+                                    <label class="field">
+                                        <input type="text" name="assetManufactor" id="assetManufactor" data-control="orgTree" class="gui-input" placeholder="输入厂家">
+                                    </label>
+                                    <label for="assetManufactor" class="button btn-primary" >厂家</label>
+                                </div>
+                            </div>
+                        </div>
+
+                            <div class="section-divider mv10" id="spy4"></div>
+                            <div class="row">
+                            <div class="col-md-3">
+                                <div class="smart-widget sm-left sml-80">
+                                    <label class="field">
+                                        <input type="text" name="assetProductiondate" id="assetProductiondate" data-control="orgTree" class="gui-input" placeholder="输入保修起始时间">
+                                    </label>
+                                    <label for="assetProductiondate" class="button btn-primary" >保修起始时间</label>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="smart-widget sm-left sml-80">
+                                    <label class="field">
+                                        <input type="text" name="assetWarrantydeadline" id="assetWarrantydeadline" data-control="orgTree" class="gui-input" placeholder="输入保修截至日期">
+                                    </label>
+                                    <label for="assetWarrantydeadline" class="button btn-primary" >保修截至日期</label>
+                                </div>
+                            </div>
+                       
+
+                        
+                        <div class="col-md-3">
+                            <div class="smart-widget sm-left sml-80">
+                                <label class="field">
+                                    <input type="text" name="assetMaintenanceprice" id="assetMaintenanceprice" data-control="orgTree" class="gui-input" placeholder="保修单价（年）">
+                                </label>
+                                <label for="assetMaintenanceprice" class="button btn-primary" >保修单价（年）</label>
+                            </div>
+                            </div>
+
+                        <div class="col-md-3">
+                            <div class="smart-widget sm-left sml-80">
+                                <label class="field">
+                                    <input type="text" name="assetUsestatus" id="assetUsestatus" data-control="orgTree" class="gui-input" placeholder="输入使用状况">
+                                </label>
+                                <label for="assetUsestatus" class="button btn-primary" >使用状况</label>
+                            </div>
+                        </div>
+                    </div>   
+                        
+  
+                       
+
+                         
+                        </div>
+                    </div>
+                    <div class="row form-actions">
+                        <button type="submit" class="btn btn-primary glyphicon glyphicon-floppy-saved" id="saveData">保存</button>
+                        <button type="button" class="btn btn-default glyphicon glyphicon-log-out btn-split" id="cancel">取消</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+    
+   
+        
+
+
+
+
+    <!-- BEGIN: PAGE SCRIPTS -->
+    <!-- jQuery -->
+    <script src="../../js/vendor/jquery/jquery-1.11.1.min.js"></script>
+
+    <script src="../../js/vendor/jquery/jquery_ui/jquery-ui.min.js"></script>
+
+    <!-- Magnific Popup JS -->
+    <script src="../../js/vendor/plugins/magnific/jquery.magnific-popup.js"></script>
+
+    <!-- FileUpload JS -->
+    <script src="../../js/vendor/plugins/fileupload/fileupload.js"></script>
+
+    <script src="../../js/vendor/plugins/holder/holder.min.js"></script>
+
+    <!-- Admin Forms JS -->
+    <script src="../../js/assets/admin-tools/admin-forms/js/jquery-ui-monthpicker.min.js"></script>
+
+    <!-- Theme Javascript -->
+    <script src="../../js/assets/js/utility/utility.js"></script>
+
+    <script src="../../js/assets/js/main.js"></script>
+
+    <script src="../../js/layer/layer.js"></script>
+    
+    <script src="../../js/util.js"></script>
+    <script src="../../js/jquery-grid.js"></script>
+    <script src="../../js/jquery.cookie.js"></script>
+    <script src="../../js/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+    
+
+    <script src="../../js/jquery-validate/jquery.validate.js"></script>
+    <script src="../../js/jquery.form.js"></script>
+    <script src="../../js/jquery-form.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            "use strict";
+            // init
+            Core.init();
+
+            $("form").cusForm({
+                getUrl:"/asset/listAsset?start=0&length=10&assetId={id}",
+                addUrl:"asset/addAsset",
+                editUrl:"/asset/updateAsset?id={assetId}",
+                removeUrl:"/asset/deleteAsset"
+
+            });
+        });
+
+    </script>
+    <script type="text/javascript" src="../../js/jquery-control.js"></script>
+    <!-- END: PAGE SCRIPTS -->
+
+</body>
+
+</html>

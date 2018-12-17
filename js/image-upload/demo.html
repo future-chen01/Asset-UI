@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+
+    <link href="../../bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="image-upload.css" rel="stylesheet" />
+    <link href="../../layer/skin/layer.css" rel="stylesheet"/>
+</head>
+<body>
+
+    <input type="text" id="text"/>
+
+    <script type="text/javascript" src="../../jquery-2.1.4.js"></script>
+    <script type="text/javascript" src="image-upload.js"></script>
+    <script type="text/javascript" src="../../layer/layer.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var $dom = $("#text").val(JSON.stringify([{
+                title: "text",
+                path: "7908abc4a1b247bba8c3ea9a2dff955c"
+            }, {
+                title: "text1",
+                path: "7908abc4a1b247bba8c3ea9a2dff955c"
+            }]));
+            var upload = new ImageUpload({
+                dom: $dom,
+                loadUrl: '/CallRepair/GetImage/'
+            });
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+/*.sidebar-menu>li>a {
+    height: auto;
+}
+
+.sidebar-menu>li>a>span:nth-child(1) {
+    font-size: 25pt;
+    text-align: center;
+    padding-left: 13px;
+    display: block;
+    float: none;
+    top: auto;
+    line-height: auto;
+    width: auto;
+}
+
+.sidebar-menu > li {
+    text-align:center;
+}*/
+
+.sidebar-toggle-mini{
+    position: absolute;
+    bottom:10px;
+}
+
+.sidebar-menu > li > a {
+    color: #dddddd;
+}
+
+.sidebar-menu > li {
+    padding-left: 12px;
+}

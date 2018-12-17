@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <title>资产管理系统</title>
+    <meta name="keywords" content="资产 管理 " />
+    <meta name="description" content="用于管理公司或企业内部的资产">
+
+    <meta name="author" content="Eric Xu">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Font CSS (Via CDN) -->
+    <!--<link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700'>-->
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" type="text/css" href="../../js/vendor/plugins/magnific/magnific-popup.css">
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" type="text/css" href="../../js/assets/skin/default_skin/css/theme.css">
+
+    <!-- Admin Forms CSS -->
+    <link rel="stylesheet" type="text/css" href="../../js/assets/admin-tools/admin-forms/css/admin-forms.css">
+
+    <!--menu css-->
+    <link rel="stylesheet" type="text/css" href="../../js/menu/menu.css" />
+
+    <link rel="stylesheet" type="text/css" href="../../js/bootstrap-table/bootstrap-table.min.css">
+
+    <link rel="stylesheet" type="text/css" href="../../css/layout.css" />
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../../img/icon.ico">
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+<![endif]-->
+
+</head>
+
+<body class="" style="overflow:hidden;">
+    <div id="main" style="height:100%;">
+        <!--导航栏 开始-->
+        <header id="topbar">
+            <div class="topbar-left">
+                <ol class="breadcrumb">
+                    <li class="crumb-icon">
+                        <a href="../dashboard.html">
+                <span class="glyphicon glyphicon-home"></span>
+              </a>
+                    </li>
+                    <li class="crumb-trail">
+                        资产管理
+                    </li>
+                    <li class="crumb-trail">资产入库</li>
+                </ol>
+            </div>
+        </header>
+        <!--导航栏 结束-->
+
+        <!--功能按钮和查询区  开始-->
+        <div class="action-heading">
+            <div class="page-x-action">
+                <a id="btnAdd" class="btn btn-primary glyphicon glyphicon-plus">新建退库单</a>
+            </div>
+            <div class="page-x-query admin-form">
+
+                <label class="field prepend-icon">
+                            <input type="text" name="query" id="query" class="gui-input" placeholder="输入搜索内容">
+                            <label for="query" class="field-icon">
+                              <i class="fa fa-search"></i>
+                            </label>
+                </label>
+            </div>
+            <div style="clear:both;"></div>
+        </div>
+        <!--功能按钮和查询区  结束-->
+
+        <!--选项卡 开始-->
+        <div class="panel page-x-content">
+            <!--选项卡 标题 开始-->
+            <div class="panel-heading">
+                <ul class="nav panel-tabs-border panel-tabs panel-tabs-left">
+                    <li class="">
+                        <a href="#tab2_1" data-toggle="tab">转移列表</a>
+                    </li>
+                    
+                </ul>
+            </div>
+            <!--选项卡 标题 结束-->
+
+            <!--选项卡内容 开始-->
+            <div class="panel-body page-x-content-body">
+                <div class="tab-content pn br-n">
+                    <div id="tab2_1" class="tab-pane">
+                        <table></table>
+                    </div>
+
+                </div>
+            </div>
+            <!--选项卡内容 结束-->
+        </div>
+    </div>
+
+    <script type="text/html" id="form-template">
+        <div class="admin-form theme-primary full-screen">
+            <div class="panel heading-border panel-primary full-screen">
+                <div class="panel-body bg-light full-screen">
+                    <form class="full-screen">
+                        <div class="full-screen form-content">
+                            <div class="section-divider mv10" id="spy4">
+                                <span>使用信息</span>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="smart-widget sm-left sml-80">
+                                        <label class="field">
+                                        <input type="text" name="changeNowstorageplace" id="changeNowstorageplace" class="gui-input" placeholder="输入使用部门">
+                                    </label>
+                                        <label for="changeNowstorageplace" class="button btn-primary">转移后使用部门</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="smart-widget sm-left sml-80">
+                                        <label class="field">
+                                        <input type="text" name="changeNowdepartmentid" id="changeNowdepartmentid" class="gui-input" placeholder="输入使用人">
+                                    </label>
+                                        <label for="changeNowdepartmentid" class="button btn-primary">转移后使用人</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="smart-widget sm-left sml-80">
+                                        <label class="field">
+                                        <input type="text" name="changeNowenabledate" id="changeNowenabledate" class="gui-input" placeholder="输入使用地">
+                                    </label>
+                                        <label for="changeNowenabledate" class="button btn-primary">转移后存放点</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="smart-widget sm-left sml-80">
+                                        <label class="field">
+                                        <input type="text" name="changeOperator" id="changeOperator" class="gui-input" placeholder="输入领用时间">
+                                    </label>
+                                        <label for="changeOperator" class="button btn-primary">转移起始日期</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="section-divider mv10" id="spy4"></div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="smart-widget sm-left sml-80">
+                                        <label class="field">
+                                        <input type="text" name="changeAssetid" id="changeAssetid" class="gui-input" placeholder="输入资产编码">
+                                    </label>
+                                        <label for="changeAssetid" class="button btn-primary">转移编码</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="smart-widget sm-left sml-80">
+                                        <label class="field">
+                                        <input type="text" name="changeRemark" id="changeRemark" class="gui-input" placeholder="输入资产名称">
+                                    </label>
+                                        <label for="changeRemark" class="button btn-primary">转移操作人</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="smart-widget sm-left sml-80">
+                                        <label class="field">
+                                        <input type="text" name="changeNowuserid" id="changeNowuserid" class="gui-input" placeholder="输入产品类别">
+                                    </label>
+                                        <label for="changeNowuserid" class="button btn-primary">转移资产id</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="smart-widget sm-left sml-80">
+                                        <label class="field">
+                                        <input type="text" name="changeNumber" id="changeNumber" class="gui-input" placeholder="输入入库时间">
+                                    </label>
+                                        <label for="changeNumber" class="button btn-primary">转移id</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-actions">
+                            <button type="button" class="btn btn-primary glyphicon glyphicon-floppy-saved" id="saveData">保存</button>
+                            <button type="button" class="btn btn-default glyphicon glyphicon-log-out btn-split" id="cancel">取消</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+    </script>
+
+    <!-- BEGIN: PAGE SCRIPTS -->
+    <!-- jQuery -->
+    <script src="../../js/vendor/jquery/jquery-1.11.1.min.js"></script>
+
+    <script src="../../js/vendor/jquery/jquery_ui/jquery-ui.min.js"></script>
+
+    <!-- Magnific Popup JS -->
+    <script src="../../js/vendor/plugins/magnific/jquery.magnific-popup.js"></script>
+
+    <!-- FileUpload JS -->
+    <script src="../../js/vendor/plugins/fileupload/fileupload.js"></script>
+    <script src="../../js/vendor/plugins/holder/holder.min.js"></script>
+
+    <!-- Admin Forms JS -->
+    <script src="../../js/assets/admin-tools/admin-forms/js/jquery-ui-monthpicker.min.js"></script>
+
+    <!-- Theme Javascript -->
+    <script src="../../js/assets/js/utility/utility.js"></script>
+    <script src="../../js/assets/js/main.js"></script>
+    <script src="../../js/bootstrap-table/bootstrap-table.min.js"></script>
+    <script src="../../js/layer/layer.js"></script>
+    <script src="../../js/util.js"></script>
+    <script src="../../js/jquery-grid.js"></script>
+    <script src="../../js/jquery.cookie.js"></script>
+    <script src="../../js/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            "use strict";
+            // init
+            Core.init();
+            // 初始化事件
+            initEvent();
+        });
+        var formIndex;
+        function initEvent() {
+            var activeClass = "active";
+            $(".panel-tabs").on("click", "li", function () {
+                var $this = $(this),
+                    isSelected = $this.hasClass(activeClass),
+                    $a = $this.find("a"),
+                    href = $a.attr("href");
+
+                if (!isSelected) {
+                    // init Table
+                    var mth = href.replace("#", "") + "Table";
+                    window[mth] && window[mth]();
+                }
+            }).find("li:first a").trigger("click");
+
+            // 新增按钮
+            $("#btnAdd").on("click", function (e) {
+                e.preventDefault();
+                showForm();
+            });
+
+            // save data
+            $(document).on("click", "#saveData", function () {
+                // save
+                layer.close(formIndex);
+            }).on("click", "#cancel", function (e) {
+                layer.close(formIndex);
+            });
+        }
+
+
+        function showForm(id) {
+            formIndex = layer.open({
+                anim: 0,
+                title: "新增资产信息",
+                area: ["90%", "90%"],
+                btn: false,
+                offset: "t",
+                content: $('#form-template').html()
+            });
+
+            initForm();
+
+            if (id) {
+                // load data
+            }
+        }
+
+        function initForm() {
+
+        }
+
+        // 转移列表  
+        var tab2_1Inited = false;
+        function tab2_1Table() {
+            if (!tab2_1Inited) {
+                // 如果没有初始化, 先对表格进行初始化
+                $("#tab2_1 table").xBootstrapTable({
+                    url:util.getUrl("/assetChange/listAssetChange"),
+                    events:{
+                        // 新增
+                        add:{
+                            // 按钮选择器
+                            selector:"#btnAdd",
+                            // 弹框选项
+                            layerOption:{
+                                // 新增页面url
+                                content:"transfer.html"
+                            }
+                        },
+                        // 删除
+                        remove:{
+                            // 删除调用的数据接口地址
+                            url:"/assetChange/deleteAssetChange",
+                            data:{
+                                assetId:null
+                            }
+                        }
+                    },
+                    columns: [{
+                        field: "selection",
+                        checkbox: true
+                    }, {
+                        filed: "operate",
+                        title: "操作",
+                        align: "center",
+                        formatter: function (value, row, index) {
+                            return ['<div class="row-btn-container"><a href="javascript:;" class="btn btn-primary btn-edit glyphicon glyphicon-edit" >修改</a>',
+                                '<a href="javascript:;" class="btn btn-danger btn-remove glyphicon glyphicon-remove">删除</a></div>'].join("");
+                        },
+                        events: {
+                            "click a.btn-edit": function (e, value, row, index) {
+                                showForm();
+                            },
+                            "click a.btn-remove": function (e, value, row, index) { }
+                        }
+                    }, {
+                        field: "changId",
+                        title: "转移id",
+                        align: "center",
+                        visible:false
+                    },  
+                    
+                    {
+                        field: "changeNumber",
+                        title: "转移编码",
+                        align: "center",
+                        visible:false
+                    },  {
+                        field: "changeAssetid",
+                        title: "转移资产id",
+                        align: "center",
+                        visible:false
+                    },  
+                    
+                    {
+                field: "number",
+                title: "转移单号",
+                sortable: true,
+                align: "center"
+            }, 
+            
+            {
+                field: "changeNowuserid",
+                title: "转移后使用人",
+                sortable: true,
+                align: "center"
+            }, {
+                field: "changeNowdepartmentid",
+                title: "转移后使用部门",
+                sortable: true,
+                align: "center"
+            }, 
+            {
+                field: "changeNowenabledate",
+                title: "转移起始日期 ",
+                sortable: true,
+                align: "center"
+            },
+             {
+                field: "changeNowstorageplace",
+                title: "转移后存放点",
+                sortable: true,
+                align: "center"
+            },
+
+             
+             {
+                field: "usestation",
+                title: "转移后使用工位",
+                sortable: true,
+                align: "center"
+            }, 
+            
+            
+            {
+                field: "changeOperator",
+                title: "转移处理人",
+                sortable: true,
+                align: "center"
+            }, {
+                field: "changeRemark",
+                title: "转移备注",
+                sortable: true,
+                align: "center"
+            }, {
+                field: "assetNumber",
+                title: "资产编号",
+                sortable: true,
+                align: "center"
+            }, {
+                field: "assetName",
+                title: "资产名称",
+                sortable: true,
+                align: "center"
+            }, {
+                field: "assetClassifyid",
+                title: "资产类别",
+                sortable: true,
+                align: "center"
+            }, {
+                field: "status",
+                title: "资产状态",
+                sortable: true,
+                align: "center"
+            }, {
+                field: "assetStoragedate",
+                title: "入库日期",
+                sortable: true,
+                align: "center"
+            }, {
+                field: "assetBrand",
+                title: "资产品牌",
+                sortable: true,
+                align: "center"
+            }, 
+
+            {
+                field: "departmentName",
+                title: "部门名",
+                sortable: true,
+                align: "center"
+            },  {
+                field: "assetClassifyName",
+                title: "资产分类名",
+                sortable: true,
+                align: "center"
+            },  {
+                field: "assetProductionDate",
+                title: "资产生产日期",
+                sortable: true,
+                align: "center"
+            },  {
+                field: "operatorMobile",
+                title: "操作人电话",
+                sortable: true,
+                align: "center"
+            },  {
+                field: "operatorSex",
+                title: "操作人性别",
+                sortable: true,
+                align: "center"
+            }, {
+                field: "operatorName",
+                title: "操作人姓名",
+                sortable: true,
+                align: "center"
+            }, {
+                field: "operatorDepartmentId",
+                title: "操作人部门id",
+                sortable: true,
+                align: "center"
+            },  {
+                field: "operatorDepartmentName",
+                title: "操作人部门名",
+                sortable: true,
+                align: "center"
+            },  {
+                field: "changeUserMobile",
+                title: "盘点人电话",
+                sortable: true,
+                align: "center"
+            },  {
+                field: "changeUserSex",
+                title: "盘点人性别",
+                sortable: true,
+                align: "center"
+            }, {
+                field: "changeUserName",
+                title: "盘点人姓名",
+                sortable: true,
+                align: "center"
+            }, {
+                field: "changeUserDepartmentId",
+                title: "盘点人部门id",
+                sortable: true,
+                align: "center"
+            }, 
+            
+            {
+                field: "assetSourceid",
+                title: "资产来源",
+                sortable: true,
+                align: "center"
+            }, 
+            // {
+            //     field: "model",
+            //     title: "型号",
+            //     sortable: true,
+            //     align: "center"
+            // }, {
+            //     field: "quality",
+            //     title: "计量单位",
+            //     sortable: true,
+            //     align: "center"
+            // },
+             {
+                field: "assetChannel",
+                title: "渠道",
+                sortable: true,
+                align: "center"
+            }, 
+            // {
+            //     field: "amount",
+            //     title: "金额",
+            //     sortable: true,
+            //     align: "center"
+            // }, {
+            //     field: "buyTime",
+            //     title: "购入时间",
+            //     sortable: true,
+            //     align: "center"
+            // }, {
+            //     field: "limit",
+            //     title: "使用期限",
+            //     sortable: true,
+            //     align: "center"
+            // }, {
+            //     field: "deadline",
+            //     title: "使用期限 ",
+            //     sortable: true,
+            //     align: "center"
+            // },
+             {
+                field: "assetSNNumber",
+                title: "SN号",
+                sortable: true,
+                align: "center"
+            },
+            // {
+            //     field: "maintainStarTime",
+            //     title: "保修起始时间",
+            //     sortable: true,
+            //     align: "center"
+            // },
+            {
+                field: "assetWarrantydeadline",
+                title: "保修截至日期",
+                sortable: true,
+                align: "center"
+            },
+            // {
+            //     field: "image",
+            //     title: "图片",
+            //     sortable: true,
+            //     align: "center"
+            // },
+            {
+                field: "assetRemark",
+                title: "资产备注",
+                sortable: true,
+                align: "center"
+            }]
+                });
+                tab2_1Inited = true;
+                $("#tab2_1 table").bootstrapTable("append", {});
+            } else {
+                // 如果已经初始化, 刷新表格数据
+                $("#tab2_1 table").bootstrapTable("refresh");
+            }
+
+        }
+
+        
+    </script>
+    <!-- END: PAGE SCRIPTS -->
+
+</body>
+
+</html>

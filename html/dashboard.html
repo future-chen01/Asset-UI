@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>资产管理系统-首页</title>
+    <meta name="keywords" content="资产 管理 " />
+    <meta name="description" content="用于管理公司或企业内部的资产">
+
+    <meta name="author" content="Eric Xu">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Font CSS (Via CDN) -->
+    <!--<link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700'>-->
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" type="text/css" href="../js/vendor/plugins/magnific/magnific-popup.css">
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" type="text/css" href="../js/assets/skin/default_skin/css/theme.css">
+
+    <!-- Admin Forms CSS -->
+    <link rel="stylesheet" type="text/css" href="../js/assets/admin-tools/admin-forms/css/admin-forms.css">
+
+    <link rel="stylesheet" type="text/css" href="../js/assets/fonts/glyphicons-pro/glyphicons-pro.css" />
+
+    <!--menu css-->
+    <link rel="stylesheet" type="text/css" href="../js/menu/menu.css" />
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../img/icon.ico">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+<![endif]-->
+    <link type="text/css" href="../css/layout.css" rel="stylesheet" />
+    <link type="text/css" href="../js/vendor/plugins/daterange/daterangepicker.css" rel="stylesheet" />
+    <style type="text/css">
+        .panel {
+            margin-bottom: 5px !important;
+            height: 100%;
+        }
+
+        .panel-body {
+            height: calc(100% - 40px);
+        }
+
+        .col-md-6,
+        .col-md-12 {
+            height: calc(100% - 5px);
+        }
+
+        .form-control {
+            height: 30px;
+            margin-top: 4px;
+        }
+
+        .nav-pills>li>a {
+            color: #888;
+            padding: 0px 8px;
+            border-radius: 1px;
+        }
+
+        #distrTable td,#distrTable th {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body style="padding:15px;">
+    <div style="height:calc(100% - 160px);">
+        <div class=" row ">
+            <div class="col-sm-4 col-md-2">
+                <div class="bs-component">
+                    <div class="panel panel-tile text-center br-a br-light">
+                        <div class="panel-body bg-light" style="padding:0;">
+                            <i class="glyphicons glyphicons-bank text-muted fs40 mt10" style="color:darkturquoise;"></i>
+                            <h3 class=" mbn">总资产</h3>
+                            <h6 class="text-system"><span data-key="totalQuality">3</span>个/￥
+                                <span data-key="totalAmount">2500</span></h6>
+                        </div>
+                        <div class="panel-footer bg-light dark br-t br-light p12">
+                            <span class="fs11">
+                                租赁台数：<span data-key="leaseQuality">0</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 col-md-2">
+                <div class="bs-component">
+                    <div class="panel panel-tile text-center br-a br-light">
+                        <div class="panel-body bg-light" style="padding:0;">
+                            <i class="glyphicons glyphicons-coins text-muted fs40 mt10" style="color:darkturquoise;"></i>
+                            <h3 class=" mbn">闲置资产</h3>
+                            <h6 class="text-system"><span data-key="unuseQuality">2</span>个/￥<span data-key="unuseAmount">2500</span></h6>
+                        </div>
+                        <div class="panel-footer bg-light dark br-t br-light p12">
+                            <span class="fs11">
+                                闲置资产占比数：<span data-key="unuseRate">0</span>%
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 col-md-2">
+                <div class="bs-component">
+                    <div class="panel panel-tile text-center br-a br-light">
+                        <div class="panel-body bg-light" style="padding:0;">
+                            <i class="glyphicons glyphicons-spade text-muted fs40 mt10" style="color:darkturquoise;"></i>
+                            <h3 class=" mbn">使用中资产</h3>
+                            <h6 class="text-system"><span data-key="useQuality">1</span>个/￥<span data-key="useAmount">0</span></h6>
+                        </div>
+                        <div class="panel-footer bg-light dark br-t br-light p12">
+                            <span class="fs11">
+                                使用中资产占比数：<span data-key="useRate">33</span>%
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4 col-md-2">
+                <div class="bs-component">
+                    <div class="panel panel-tile text-center br-a br-light">
+                        <div class="panel-body bg-light" style="padding:0;">
+                            <i class="glyphicons glyphicons-inbox text-muted fs40 mt10" style="color:darkturquoise;"></i>
+                            <h3 class=" mbn">正常资产</h3>
+                            <h6 class="text-system"><span data-key="normalQuality">3</span>个/￥<span data-key="normalAmount">2500</span></h6>
+                        </div>
+                        <div class="panel-footer bg-light dark br-t br-light p12">
+                            <span class="fs11">
+                                租赁台数：<span data-key="normalLeaseQuality">0</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 col-md-2">
+                <div class="bs-component">
+                    <div class="panel panel-tile text-center br-a br-light">
+                        <div class="panel-body bg-light" style="padding:0;">
+                            <i class="glyphicons glyphicons-keys text-muted fs40 mt10" style="color:darkturquoise;"></i>
+                            <h3 class=" mbn">损坏/遗失资产</h3>
+                            <h6 class="text-system"><span data-key="damageQuality">0</span>个/￥<span data-key="damageAmount">0</span></h6>
+                        </div>
+                        <div class="panel-footer bg-light dark br-t br-light p12">
+                            <span class="fs11">
+                                损坏资产占比数：<span data-key="damageRate">0</span>%
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4 col-md-2">
+                <div class="bs-component">
+                    <div class="panel panel-tile text-center br-a br-light">
+                        <div class="panel-body bg-light" style="padding:0;">
+                            <i class="glyphicons glyphicons-bin text-muted fs40 mt10" style="color:darkturquoise;"></i>
+                            <h3 class="mbn">报废资产</h3>
+                            <h6 class="text-system"><span data-key="rejectQuality">0</span>个/￥<span data-key="rejectAmount">0</span></h6>
+                        </div>
+                        <div class="panel-footer bg-light dark br-t br-light p12">
+                            <span class="fs11">
+                                报废资产占比数：<span data-key="rejectRate">0</span>%
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="height:calc(50% - 85px);">
+            <div class="col-md-6 col-lg-6 admin-grid">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <span class="panel-title">资产数量</span>
+                        <span class="panel-controls">
+                        <input id="dateRange" class="form-control pull-right"/></span>
+                    </div>
+                    <div class="panel-body pn">
+                        <div id="quality" class="full-screen"></div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6 admin-grid">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <span class="panel-title">资产分类</span>
+                        <span class="panel-controls"></div>
+                    <div class="panel-body pn">
+                        <div id="category" class="full-screen"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row"  style="height:calc(50% - 85px);">
+            <div class="col-md-12 col-lg-12 admin-grid">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <span class="panel-title" style="float:left;">资产分布 </span>
+                        <ul class="nav nav-pills" id="categoryList" style="float:left;margin-left:20px;">
+
+                        </ul>
+                    </div>
+                    <div class="panel-body pn row">
+                        <div id="detailChart" class=" col-md-6"></div>
+                        <div id="detailTable" class=" col-md-6">
+                            <ul class="nav nav-pills" id="categoryTable" style="float:left;margin-left:20px;">
+                                <li class="active" data-id="category">
+                                    <a href="javascript:;" data-toggle="tab"  aria-expanded="false">资产类型</a>
+                                </li>
+                                <li class="" data-id="brand">
+                                    <a href="javascript:;" data-toggle="tab" aria-expanded="true">资产品牌</a>
+                                </li>
+                            </ul>
+                            <table id="distrTable" class="table table-striped">
+                                <tr>
+                                    <th>
+                                        资产
+                                    </th>
+                                    <th>
+                                        数量
+                                    </th>
+                                    <th>
+                                        占比
+                                    </th>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/vendor/jquery/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="../js/echarts.min.js"></script>
+    <script type="text/javascript" src="../js/vendor/plugins/daterange/moment.min.js"></script>
+    <script type="text/javascript" src="../js/vendor/plugins/daterange/daterangepicker.js"></script>
+    <script type="text/javascript">
+        var demoData = {
+            totalAmount: 1000000,
+            totalQuality: 200,
+            leaseQuality: 1,
+            unuseQuality: 2,
+            unuseAmount: 1000,
+            unuseRate: 50,
+            useQuality: 50,
+            useAmount: 19000,
+            useRate: 50,
+            normalQuality: 90,
+            normalAmount: 18000,
+            normalLeaseQuality: 50,
+            damageQuality: 5,
+            damageAmount: 20,
+            damageRate: 1,
+            rejectQuality: 5,
+            rejectAmount: 10,
+            rejectRate: 5
+        },
+            demoQuality = [];
+
+        $(function () {
+            initEvent();
+            // render statistic data
+            renderStatistic();
+            // 资产数据图
+            initQualityChart();
+            // 资产种类
+            initCategoryChart()
+            //
+            initDistrChart();
+        });
+
+        function renderStatistic() {
+            $("[data-key]").each(function () {
+                var $this = $(this),
+                    key = $this.data("key"),
+                    val = demoData[key] || "";
+                $this.text(val);
+            });
+        }
+        // 资产数量
+        var qualityChart;
+        function initQualityChart() {
+            qualityChart = echarts.init(document.getElementById("quality"));
+            var option = {
+                tooltip: {
+                    trigger: 'axis'
+                },
+                legend: {
+                    data: ['在用', '闲置', '报废', '维修', '遗失', '总数']
+                },
+                grid: {
+                    left: '5%',
+                    right: '8%',
+                    bottom: '10%',
+                    containLabel: true
+                },
+                toolbox: {
+                    feature: {
+                        show: false
+                    }
+                },
+                xAxis: {
+                    type: 'time',
+                    boundaryGap: false,
+                    //data: [],
+                    name: "日期"
+                },
+                yAxis: {
+                    type: 'value',
+                    name: "数量"
+                },
+                series: [
+                    {
+                        name: '在用',
+                        type: 'line',
+                        data: []
+                    },
+                    {
+                        name: '闲置',
+                        type: 'line',
+                        data: []
+                    },
+                    {
+                        name: '报废',
+                        type: 'line',
+                        data: []
+                    },
+                    {
+                        name: '维修',
+                        type: 'line',
+                        data: []
+                    },
+                    {
+                        name: '遗失',
+                        type: 'line',
+                        data: []
+                    },
+                    {
+                        name: '总数',
+                        type: 'line',
+                        data: []
+                    }
+                ]
+            };
+            qualityChart.setOption(option);
+
+            var
+                format = "YYYY-MM-DD",
+                startDate = moment().add(-6, "months").format(format),
+                endDate = moment().format(format);
+            $("#dateRange").daterangepicker({
+                startDate: startDate,
+                endDate: endDate,
+                format: format
+            }).on("apply.daterangepicker", function (e) {
+                renderQualityChart();
+            });
+            renderQualityChart();
+        }
+
+        function renderQualityChart() {
+            var ds = $("#dateRange").val().split(" - "),
+                startDate = ds[0],
+                endDate = ds[1],
+                option = qualityChart.getOption(),
+                xAxis = option.xAxis[0],
+                use = option.series[0].data,
+                unuse = option.series[1].data,
+                reject = option.series[2].data,
+                repair = option.series[3].data,
+                scrap = option.series[4].data,
+                total = option.series[5].data;
+            genQualityData(startDate, endDate);
+            xAxis.min = startDate;
+            xAxis.max = endDate;
+            //xAxis.splice(0, xAxis.length);
+            use.splice(0, use.length);
+            unuse.splice(0, unuse.length);
+            reject.splice(0, reject.length);
+            repair.splice(0, repair.length);
+            scrap.splice(0, scrap.length);
+            total.splice(0, total.length);
+
+            $.each(demoQuality, function () {
+                //xAxis.push(this.date);
+                use.push({ name: this.date, value: [this.date, this.use] });
+                unuse.push({ name: this.date, value: [this.date, this.unuse] });
+                reject.push({ name: this.date, value: [this.date, this.reject] });
+
+                repair.push({ name: this.date, value: [this.date, this.repair] });
+
+                scrap.push({ name: this.date, value: [this.date, this.scrap] });
+
+                total.push({ name: this.date, value: [this.date, this.total] });
+            });
+
+            qualityChart.setOption(option);
+        }
+
+        function genQualityData(start, end) {
+            var i = 0;
+            demoQuality.splice(0, demoQuality.length);
+            while (moment(start).add(i, "d")._d <= moment(end)._d) {
+                demoQuality.push({
+                    date: moment(start).add(i, "d").format("YYYY-MM-DD"),
+                    use: Math.round(Math.random() * 100),
+                    unuse: Math.round(Math.random() * 30),
+                    reject: Math.round(Math.random() * 10),
+                    repair: Math.round(Math.random() * 5),
+                    scrap: Math.round(Math.random() * 3),
+                    total: Math.round(Math.random() * 200)
+                });
+                i++;
+            }
+        }
+        // 资产分类
+        var categoryChart;
+        function initCategoryChart() {
+            categoryChart = echarts.init(document.getElementById("category"));
+            var option = {
+                tooltip: {
+                    trigger: 'axis',
+                    axisPointer: {
+                        type: 'shadow'
+                    }
+                },
+                grid: {
+                    left: 100,
+                    top: 10,
+                    bottom: 10
+                },
+                toolbox: {
+                    show: false,
+                    feature: {
+                        //saveAsImage: {}
+                    }
+                },
+                xAxis: {
+                    type: 'value',
+                    //name: 'Days',
+                    show: false,
+                    axisLabel: {
+                        formatter: '{value}'
+                    }
+                },
+                yAxis: {
+                    type: 'category',
+                    inverse: true,
+                    data: []
+                },
+                series: [
+                    {
+                        name: '数量',
+                        type: 'bar',
+                        data: [],
+                        itemStyle: {
+                            color: "#2894FF"
+                        },
+                        label: {
+                            normal: {
+                                show: true,
+                                //textBorderColor: '#333',
+                                textBorderWidth: 2,
+                                position: "right",
+                                formatter: function (params) {
+                                    var data = params.data;
+                                    return data.value + "/" + Math.round(data.value / data.total * 10000) / 100 + "%";
+                                }
+                            }
+                        }
+
+                    }
+                ]
+            };
+            categoryChart.setOption(option);
+            renderCategoryChart();
+        }
+
+        function renderCategoryChart() {
+            var data = getCategoryData(),
+                option = categoryChart.getOption(),
+                yAxis = option.yAxis[0].data,
+                series = option.series[0].data;
+            yAxis.splice(0, yAxis.length);
+            series.splice(0, series.length);
+            $.each(data, function () {
+                yAxis.push(this.name);
+                series.push(this);
+            });
+            categoryChart.setOption(option);
+
+        }
+
+        function getCategoryData() {
+            var types = ["IT", "台式机", "笔记本", "办公桌", "台灯", "电脑椅"],
+                data = [],
+                rad = 0,
+                total = 0;
+            $.each(types, function (idx, elem) {
+                rad = Math.round(Math.random() * 50);
+                data.push({
+                    name: elem,
+                    value: rad
+                });
+                total += rad;
+            });
+
+            $.each(data, function () {
+                this.total = total;
+            });
+            return data;
+        }
+
+        // 资产分布
+        var distrChart;
+        function initDistrChart() {
+            distrChart = echarts.init(document.getElementById("detailChart"));
+            var option = {
+                tooltip: {
+                    trigger: 'item',
+                    formatter: "{a} <br/>{b}: {c} ({d}%)"
+                },
+                series: [
+                    {
+                        name: '资产类别',
+                        type: 'pie',
+                        selectedMode: 'single',
+                        radius: [0, '45%'],
+                        label: {
+                            normal: {
+                                position: 'inner'
+                            }
+                        },
+                        labelLine: {
+                            normal: {
+                                show: false
+                            }
+                        },
+                        data: []
+                    },
+                    {
+                        name: '资产品牌',
+                        type: 'pie',
+                        radius: ['55%', '85%'],
+                        data: []
+                    }
+                ]
+            };
+            distrChart.setOption(option);
+            getDistrCategory(function () {
+                
+            });
+        }
+
+        function genDistrChartData() {
+
+            var categories = [{
+                name: "笔记本",
+                value: 0
+            }, {
+                name: "台式机",
+                value: 0
+            }, {
+                name: "键盘",
+                value: 0
+            }, {
+                name: "鼠标",
+                value: 0
+            }],
+                brands = [{
+                    name: "联想",
+                    value: 0
+                }, {
+                    name: "华硕",
+                    value: 0
+                }, {
+                    name: "三星",
+                    value: 0
+                }, {
+                    name: "神舟",
+                    value: 0
+                }],
+                totalCategory = 0,
+                totalBrand = 0;
+
+            $.each(categories, function () {
+                this.value = Math.round(Math.random() * 100);
+                totalCategory += this.value;
+            });
+
+            $.each(brands, function () {
+                
+                this.value = Math.round(Math.random() * 80);
+                totalBrand += this.value;
+            });
+            $.each(categories, function () {
+                this.rate = Math.round(this.value / totalCategory * 10000) / 100 + "%";
+            });
+            $.each(brands, function () {
+                this.rate = Math.round(this.value / totalBrand * 10000) / 100 + "%";
+            });
+
+            return {
+                category: categories,
+                brand: brands
+            };
+
+        }
+
+        function getDistrCategory(callback) {
+            var data = [{
+                id: 1,
+                name: "IT"
+            }, {
+                id: 2,
+                name: "办公用品"
+            }],
+                html = [];
+            $.each(data, function () {
+                // class="active"               
+                html.push(['<li class="" data-id="', this.id, '"> ',
+                    '<a href="javascript:;" data-toggle="tab" aria-expanded="false">', this.name, '</a></li>'].join(""));
+            });
+            $(html.join("")).appendTo($("#categoryList"));
+            $("#categoryList").find("li:first").trigger("click");
+            callback && callback();
+        }
+
+        function renderDistrChart(data) {
+            var option = distrChart.getOption(),
+                categoryData = option.series[0].data,
+                brandData = option.series[1].data;
+            categoryData.splice(0, categoryData.length);
+            brandData.splice(0, brandData.length);
+            $.each(data.category, function () {
+                categoryData.push(this);
+            });
+            $.each(data.brand, function () {
+                brandData.push(this);
+            });
+            distrChart.setOption(option);
+        }
+
+        function renderDistrTable(data) {
+            if (data) {
+                $("#distrTable").data("data", data);
+            } else {
+                data = $("#distrTable").data("data");
+            }
+
+            // 获取当前key
+            var key = $("#detailTable").find("li.active").data("id");
+            data = data[key];
+
+            $("#distrTable").find("tr:gt(0)").remove();
+            var html = [];
+            $.each(data, function () {
+                html.push(genDistrTableRow(this));
+            });
+            $(html.join("")).appendTo($("#distrTable"));
+        }
+
+        function genDistrTableRow(data) {
+            var html = ['<tr><td>', data.name, '</td><td>', data.value, '</td><td>',
+                data.rate, '</td></tr>'].join("");
+            return html;
+        }
+
+        function initEvent() {
+            var selectedClass = "active";
+            $("#categoryList").on("click", "li", function () {
+                var $this = $(this),
+                    selected = $this.hasClass(selectedClass);
+
+                if (!selected) {
+                    $("#categoryList").find("li").removeClass(selectedClass);
+                    $this.addClass(selectedClass);
+                    var data=genDistrChartData();
+                    renderDistrChart(data);
+                    renderDistrTable(data);
+                }
+            });
+
+            $("#detailTable").on("click", "li", function () {
+                var $this = $(this),
+                    selected = $this.hasClass(selectedClass);
+
+                if (!selected) {
+                    $("#detailTable").find("li").removeClass(selectedClass);
+                    $this.addClass(selectedClass);
+                    renderDistrTable();
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
